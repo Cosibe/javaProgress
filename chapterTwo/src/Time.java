@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 // question 1
 public class Time {
     public static void main(String[] args){
@@ -17,11 +19,14 @@ public class Time {
 
 //        question 5
         double dayPassed = totalSecs / midnight * 100;
-        System.out.println("Day that has passed in percentage: " + dayPassed + "%");
+        DecimalFormat numFormat = new DecimalFormat("#.00");
+
+        System.out.println("Day that has passed in percentage: " + numFormat.format(dayPassed) + "%");
 
 //        question 6
         double timeSinceStarted = totalSecs - 58325.0;
         double timeStartedMin = timeSinceStarted / 60;
-        System.out.println("Time taken to solve exercise two in seconds: " + timeSinceStarted + " while in minutes:" + timeStartedMin);
+        System.out.println("Time taken to solve exercise two in seconds: " + timeSinceStarted + " while in minutes:" + numFormat.format(timeStartedMin));
+//        System.out.println(System.out);
     }
 }

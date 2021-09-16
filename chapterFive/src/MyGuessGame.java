@@ -13,13 +13,16 @@ public class MyGuessGame {
         return in.nextInt();
     }
     public static void condition(){
-        int x = guess();
-        int z = rand();
         int i = 0;
         boolean m = false;
        while (!m && i < 3){
+           int x = guess();
+           int z = rand();
            i++;
-           guess();
+           if (i == 3){
+               System.out.println("Game Over");
+               return;
+           }
            if (x == z){
                System.out.println("Your guess is  correct!");
                m = true;
@@ -29,7 +32,6 @@ public class MyGuessGame {
            }
            else{
                System.out.println("Your guess is low!");
-               return;
            }
        }
     }
